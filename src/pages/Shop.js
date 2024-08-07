@@ -4,8 +4,6 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-
-import { FaArrowRight } from "react-icons/fa6";
 import { getAllProduct, addToWishlist } from "../features/product/productSlice";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";

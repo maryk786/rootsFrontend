@@ -7,7 +7,7 @@ import {
   getRelatedProducts,
 } from "../features/product/productSlice";
 import { addProToCart, getUserCart } from "../features/user/userSlice";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ProductCard from "../components/ProductCard"; // Assuming you have a ProductCard component
 
 const SingleProduct = () => {

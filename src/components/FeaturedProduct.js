@@ -1,28 +1,23 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { getAllProduct, addToWishlist } from "../features/product/productSlice";
-import { RiShoppingCartLine } from "react-icons/ri";
-import { FaRegHeart } from "react-icons/fa";
-import { toast } from "react-toastify";
+import React from "react";
+import { useSelector } from "react-redux";
+// import { getAllProduct, addToWishlist } from "../features/product/productSlice";
+// import { toast } from "react-toastify";
 import ProductCard from "./ProductCard";
-import CustomCard from "./CategoryCard";
 
 const FeaturedProduct = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const productState = useSelector((state) => state.product?.product) || [];
   console.log("fetaure product", productState);
 
-  const notify = () => toast("Added to Wishlist");
-  useEffect(() => {
-    dispatch(getAllProduct());
-  }, [dispatch]);
+  // const notify = () => toast("Added to Wishlist");
+  // useEffect(() => {
+  //   dispatch(getAllProduct());
+  // }, [dispatch]);
 
-  const addToWish = (id) => {
-    dispatch(addToWishlist(id));
-    notify();
-  };
+  // const addToWish = (id) => {
+  //   dispatch(addToWishlist(id));
+  //   notify();
+  // };
 
   const featuredProducts = Array.isArray(productState)
     ? productState?.filter((products) => products?.featuredProducts)
@@ -42,7 +37,7 @@ const FeaturedProduct = () => {
           </p>
         ) : (
           <div className="feature-card grid grid-cols-4 gap-4">
-            {featuredProducts.map((item, index) => (
+            {featuredProducts.map((item) => (
               <ProductCard key={item._id} data={item} />
             ))}
           </div>

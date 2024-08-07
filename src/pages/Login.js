@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -36,7 +36,7 @@ const LoginForm = () => {
     if (authState.user !== null && authState.isError === false) {
       navigate("/");
     }
-  }, [authState]);
+  }, [authState,navigate]);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
